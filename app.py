@@ -152,6 +152,40 @@ def fetcher():
         task = Student_records.find({refer: key})
     return render_template('viewfetch.html',search=task,email=email)
 
+@app.route('/deletefetch')
+def deletefetch():
+    if "email" in session:
+        email = session["email"]
+    return render_template('deletefetch.html',email=email)
+
+@app.route('/deletefetcher', methods=["POST", "GET"])
+def deletefetcher():
+    # err_no=request.values.get("enrollmentno")
+    # task=Student_records.find({"enrollmentno":err_no})
+    if "email" in session:
+        email = session["email"]
+        key = request.values.get("key")
+        refer = request.values.get("refer")
+        task = Student_records.find({refer: key})
+    return render_template('viewdeletefetch.html',search=task,email=email)
+
+@app.route("/remove")
+def delete ():
+    #Deleting a Task with various references
+    if "email" in session:
+        email = session["email"]
+        key = request.values.get("enrollmentno")
+        Student_records.remove({"enrollmentno": key})
+        task = Student_records.find()
+        return render_template('viewall.html', search=task,email=email)
+
+@app.route("/view")
+def lists ():
+    if "email" in session:
+        email = session["email"]
+        #Display the all Tasks
+        task = Student_records.find()
+        return render_template('viewall.html',search=task,email=email)
 
 @app.route('/updation', methods=["POST", "GET"])
 def updation():
