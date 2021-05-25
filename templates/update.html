@@ -2,6 +2,8 @@
 	<head>
 		<title>Update</title>
 	</head>
+	  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="/static/css/form-upload.css" rel="stylesheet">
 	<style>
 		h1{
 			font-family:"Arial Black", Gadget, sans-serif;
@@ -11,97 +13,119 @@
 		}
 	</style>
 <body>
-<!--    <p>Hello Admin : {{ email }}</p>-->
+	<nav class="navbar navbar-light" style="background-color: #4CAF50;">
+  <a class="navbar-brand" href="#">Registration Form</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Register <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/login">Login</a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+    </div>
+  </div>
+</nav>
+    <p>Hello Admin : {{ email }}</p>
+
 	<hr>
 	<h3>Update tasks with a reference</h3>
 
-	<form action="/updation" method="post">
+	<form class="form-upload" action="/updation" method="post">
 	{% for task in search %}
 		Unique Enrollment Number ID : {{ task['enrollmentno'] }}<br/>
 	<input type="text" name="enrollmentno" value="{{ task['enrollmentno'] }}" hidden>
-
+		<div class="form-group">
 	<table>
 	<tr>
-		<td>Student Personal Details</td>
+		<td><b>Student Personal Details</b></td>
 	</tr>
 	<tr>
-	<td>Student Name</td><td> : </td><td><input type="text" name="fullname" value="{{ task['StdName'] }}" placeholder="{{ task['StdName'] }}"></td>
+	<td>Student Name</td><td> : </td><td><input class="form-control" type="text" name="fullname" value="{{ task['StdName'] }}" placeholder="{{ task['StdName'] }}"></td>
 	</tr>
      <tr>
-	<td>Batch Year</td><td> : </td><td><input type="text" name="batchyr" value="{{ task['batchyr'] }}" placeholder="{{ task['batchyr'] }}"></td>
+	<td>Batch Year</td><td> : </td><td><input class="form-control" type="text" name="batchyr" value="{{ task['batchyr'] }}" placeholder="{{ task['batchyr'] }}"></td>
 	</tr>
      <tr>
-	<td>Aadhar Card</td><td> : </td><td><input type="text" name="aadharcard" value="{{ task['aadharcard'] }}" placeholder="{{ task['aadharcard'] }}"></td>
+	<td>Aadhar Card</td><td> : </td><td><input class="form-control" type="text" name="aadharcard" value="{{ task['aadharcard'] }}" placeholder="{{ task['aadharcard'] }}"></td>
 	</tr>
     <tr>
-	<td>Birth Date</td><td> : </td><td><input type="date" name="birthday" value="{{ task['birthday'] }}" placeholder="{{ task['birthday'] }}"></td>
+	<td>Birth Date</td><td> : </td><td><input class="form-control" type="date" name="birthday" value="{{ task['birthday'] }}" placeholder="{{ task['birthday'] }}"></td>
 	</tr>
     <tr>
-	<td>Gender</td><td> : </td><td><input type="text" name="gender" value="{{ task['gender'] }}" placeholder="{{ task['gender'] }}"></td>
+	<td>Gender</td><td> : </td><td><input class="form-control" type="text" name="gender" value="{{ task['gender'] }}" placeholder="{{ task['gender'] }}"></td>
 	</tr>
     <tr>
-	<td>Student Number</td><td> : </td><td><input type="text" name="number" value="{{ task['number'] }}" placeholder="{{ task['number'] }}"></td>
+	<td>Student Number</td><td> : </td><td><input class="form-control" type="text" name="number" value="{{ task['number'] }}" placeholder="{{ task['number'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student Email Id</td><td> : </td><td><input type="text" name="email" value="{{ task['emailp'] }}" placeholder="{{ task['emailp'] }}"></td>
+	<td>Student Email Id</td><td> : </td><td><input class="form-control" type="text" name="email" value="{{ task['emailp'] }}" placeholder="{{ task['emailp'] }}"></td>
 	</tr>
 	<tr>
-	<td>Parents Number</td><td> : </td><td><input type="text" name="Parentnumber" value="{{ task['Parentnumber'] }}" placeholder="{{ task['Parentnumber'] }}"></td>
+	<td>Parents Number</td><td> : </td><td><input class="form-control" type="text" name="Parentnumber" value="{{ task['Parentnumber'] }}" placeholder="{{ task['Parentnumber'] }}"></td>
 	</tr>
 	<tr>
-	<td>Parent Email Id</td><td> : </td><td><input type="text" name="Parentemail" value="{{ task['Parentemail'] }}" placeholder="{{ task['Parentemail'] }}"></td>
+	<td>Parent Email Id</td><td> : </td><td><input class="form-control" type="text" name="Parentemail" value="{{ task['Parentemail'] }}" placeholder="{{ task['Parentemail'] }}"></td>
 	</tr>
     <tr>
-	<td>Home Address</td><td> : </td><td><textarea type="text" name="Homeadd" rows=3 cols=30 placeholder="{{ task['Homeadd'] }}"> {{ task['Homeadd'] }} </textarea></td>
+	<td>Home Address</td><td> : </td><td><textarea class="form-control" type="text" name="Homeadd" rows=3 cols=30 placeholder="{{ task['Homeadd'] }}"> {{ task['Homeadd'] }} </textarea></td>
 	</tr>
 		<tr>
-		<td>Student Accademic Details</td>
+			<td><b>Student Accademic Details</b></td>
 	</tr>
 	<tr>
-	<td>Student Course Code</td><td> : </td><td><input type="text" name="Coursecode" value="{{ task['Coursecode'] }}" placeholder="{{ task['Coursecode'] }}"></td>
+	<td>Student Course Code</td><td> : </td><td><input class="form-control" type="text" name="Coursecode" value="{{ task['Coursecode'] }}" placeholder="{{ task['Coursecode'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student Course Type</td><td> : </td><td><input type="text" name="Coursetype" value="{{ task['Coursetype'] }}" placeholder="{{ task['Coursetype'] }}"></td>
+	<td>Student Course Type</td><td> : </td><td><input class="form-control" type="text" name="Coursetype" value="{{ task['Coursetype'] }}" placeholder="{{ task['Coursetype'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student Branch Code</td><td> : </td><td><input type="text" name="Branchcode" value="{{ task['Branchcode'] }}" placeholder="{{ task['Branchcode'] }}"></td>
+	<td>Student Branch Code</td><td> : </td><td><input class="form-control" type="text" name="Branchcode" value="{{ task['Branchcode'] }}" placeholder="{{ task['Branchcode'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student Branch Name</td><td> : </td><td><input type="text" name="Branchname" value="{{ task['Branchname'] }}" placeholder="{{ task['Branchname'] }}"></td>
+	<td>Student Branch Name</td><td> : </td><td><input class="form-control" type="text" name="Branchname" value="{{ task['Branchname'] }}" placeholder="{{ task['Branchname'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student College Code</td><td> : </td><td><input type="text" name="Collegecode" value="{{ task['Collegecode'] }}" placeholder="{{ task['Collegecode'] }}"></td>
+	<td>Student College Code</td><td> : </td><td><input class="form-control" type="text" name="Collegecode" value="{{ task['Collegecode'] }}" placeholder="{{ task['Collegecode'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student College Name</td><td> : </td><td><input type="text" name="Collegename" value="{{ task['Collegename'] }}" placeholder="{{ task['Collegename'] }}"></td>
+	<td>Student College Name</td><td> : </td><td><input class="form-control" type="text" name="Collegename" value="{{ task['Collegename'] }}" placeholder="{{ task['Collegename'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student Current Status</td><td> : </td><td><input type="text" name="Currentstatus" value="{{ task['Currentstatus'] }}" placeholder="{{ task['Currentstatus'] }}"></td>
+	<td>Student Current Status</td><td> : </td><td><input class="form-control" type="text" name="Currentstatus" value="{{ task['Currentstatus'] }}" placeholder="{{ task['Currentstatus'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student CPI</td><td> : </td><td><input type="text" name="CPI" value="{{ task['CPI'] }}" placeholder="{{ task['CPI'] }}"></td>
+	<td>Student CPI</td><td> : </td><td><input class="form-control" type="text" name="CPI" value="{{ task['CPI'] }}" placeholder="{{ task['CPI'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student CGPA</td><td> : </td><td><input type="text" name="CGPA" value="{{ task['CGPA'] }}" placeholder="{{ task['CGPA'] }}"></td>
+	<td>Student CGPA</td><td> : </td><td><input class="form-control" type="text" name="CGPA" value="{{ task['CGPA'] }}" placeholder="{{ task['CGPA'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student Current Semester</td><td> : </td><td><input type="text" name="Currentsem" value="{{ task['Currentsem'] }}" placeholder="{{ task['Currentsem'] }}"></td>
+	<td>Student Current Semester</td><td> : </td><td><input class="form-control" type="text" name="Currentsem" value="{{ task['Currentsem'] }}" placeholder="{{ task['Currentsem'] }}"></td>
 	</tr>
 	<tr>
-	<td>Student Term End</td><td> : </td><td><input type="text" name="Termend" value="{{ task['Termend'] }}" placeholder="{{ task['Termend'] }}"></td>
+	<td>Student Term End</td><td> : </td><td><input type="text" class="form-control" name="Termend" value="{{ task['Termend'] }}" placeholder="{{ task['Termend'] }}"></td>
 	</tr>
 
 	</table>
+		</div>
 	{% endfor %}
 		<p>Student Name {{ StdName }} Data Updated Successfully</p>
-		<button type="submit"> Update Task </button>
+		<button class="btn btn-lg btn-primary button button2" type="submit"> Update Task </button>
 		<br/>
-	</form>
-	<h3>Select The Operation That Need To Be Performed Using Following Buttons</h3>
-    <a href="/Insert" class="btn btn-lg btn-primary btn-block">INSERT</a>&emsp;
-    <a href="/fetch" class="btn btn-lg btn-primary btn-block">UPDATE OTHER STUDENT</a>&emsp;
-    <a href="/delete" class="btn btn-lg btn-primary btn-block">DELETE OHTER STUDENT</a>&emsp;
-    <a href="/fetch" class="btn btn-lg btn-primary btn-block">VIEW OTHER STUDENT</a>&emsp;</body>
-    <a href="/view" class="btn btn-lg btn-primary btn-block">VIEW ALL STUDENT</a>&emsp;</body>
+	</form>&emsp;<br>&emsp;
+	<a href="/logged_in" class="btn btn-lg btn-primary button button2">BACK</a>&emsp;
+	&emsp;<h3>Select The Operation That Need To Be Performed Using Following Buttons</h3>
+    &emsp;<a href="/Insert" class="btn btn-lg btn-primary button button2">INSERT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary button button2">UPDATE OTHER STUDENT</a>&emsp;
+    <a href="/delete" class="btn btn-lg btn-primary button button2">DELETE OHTER STUDENT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary button button2">VIEW OTHER STUDENT</a>&emsp;
+    <a href="/view" class="btn btn-lg btn-primary button button2">VIEW ALL STUDENT</a>&emsp;
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -1,24 +1,3 @@
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color:  #FFFFFF;
-}
-
-
 .form-upload {
   width: 100%;
   max-width: 330px;
@@ -28,13 +7,37 @@ body {
 .form-upload .checkbox {
   font-weight: 400;
 }
-.form-upload .form-control {
+.form-upload .form-group .form-control {
   position: relative;
   box-sizing: border-box;
   height: auto;
   padding: 10px;
   font-size: 16px;
 }
-.form-upload .form-control:focus {
+.form-upload .form-group .form-control:focus {
   z-index: 2;
 }
+.form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-control:focus {
+  z-index: 2;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+

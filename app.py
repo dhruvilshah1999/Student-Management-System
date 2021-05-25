@@ -96,7 +96,9 @@ def logged_in():
 
 @app.route('/Insert')
 def Insert():
-    return render_template('Insert.html')
+    if "email" in session:
+        email = session["email"]
+        return render_template('Insert.html',email=email)
 
 @app.route('/insert', methods=["POST", "GET"])
 def insert():
@@ -135,7 +137,9 @@ def insert():
 
 @app.route('/fetch')
 def fetch():
-    return render_template('fetch.html')
+    if "email" in session:
+        email = session["email"]
+    return render_template('fetch.html',email=email)
 
 @app.route('/fetcher', methods=["POST", "GET"])
 def fetcher():
@@ -185,9 +189,11 @@ def updation():
 
 @app.route("/update")
 def update():
-    enrollmentno=request.values.get("enrollmentno")
-    task=Student_records.find({"enrollmentno":enrollmentno})
-    return render_template('update.html',search=task)
+    if "email" in session:
+        email = session["email"]
+        enrollmentno=request.values.get("enrollmentno")
+        task=Student_records.find({"enrollmentno":enrollmentno})
+        return render_template('update.html',search=task,email=email)
 
 
 @app.route("/logout", methods=["POST", "GET"])

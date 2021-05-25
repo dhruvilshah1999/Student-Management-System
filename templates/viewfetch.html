@@ -1,9 +1,24 @@
 <html>
 	<head>
 		<title>View Search Results</title>
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+  		<link href="/static/css/form-upload.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >
 	</head>
 <body>
+<nav class="navbar navbar-light" style="background-color: #4CAF50;">
+  <a class="navbar-brand" href="#">Registration Form</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Register <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/login">Login</a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+    </div>
+  </div>
+</nav>
     <p>Hello Admin : {{ email }}</p>
 
 	<h1>Search Results</h1>
@@ -61,19 +76,27 @@
 			<td class="CGPA">{{ task["CGPA"] }}</td>
             <td class="Currentsem">{{ task["Currentsem"] }}</td>
 			<td class="Termend">{{ task["Termend"] }}</td>
-			<td class="func1"><a href="./remove?enrollmentno={{ task['enrollmentno'] }}"><button type="submit">DELETE THIS STUDENT</button></a></td>
-			<td class="func1"><a href="./update?enrollmentno={{ task['enrollmentno'] }}"><button type="submit">UPDATE THIS STUDENT</button></a></td>
+			<td class="func1"><a href="./remove?enrollmentno={{ task['enrollmentno'] }}"><button class="btn btn-lg btn-primary button button2" type="submit">DELETE THIS STUDENT</button></a></td>
+			<td class="func1"><a href="./update?enrollmentno={{ task['enrollmentno'] }}"><button class="btn btn-lg btn-primary button button2" type="submit">UPDATE THIS STUDENT</button></a></td>
 		</tr>
 		{% endfor %}
 	{% else %}
 		<h4>No Result Found !!</h4>
 	{% endif %}
-	</table>
-<h3>Select The Operation That Need To Be Performed Using Following Buttons</h3>
-    <a href="/Insert" class="btn btn-lg btn-primary btn-block">INSERT</a>&emsp;
-    <a href="/fetch" class="btn btn-lg btn-primary btn-block">UPDATE OTHER STUDENT</a>&emsp;
-    <a href="/delete" class="btn btn-lg btn-primary btn-block">DELETE OHTER STUDENT</a>&emsp;
-    <a href="/fetch" class="btn btn-lg btn-primary btn-block">VIEW OTHER STUDENT</a>&emsp;</body>
-    <a href="/view" class="btn btn-lg btn-primary btn-block">VIEW ALL STUDENT</a>&emsp;</body>
+	</table>&emsp;<br>&emsp;
+ <a href="/logged_in" class="btn btn-lg btn-primary button button2">BACK</a>&emsp;
+	&emsp;<h3>Select The Operation That Need To Be Performed Using Following Buttons</h3>
+    &emsp;<a href="/Insert" class="btn btn-lg btn-primary button button2">INSERT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary button button2">UPDATE OTHER STUDENT</a>&emsp;
+    <a href="/delete" class="btn btn-lg btn-primary button button2">DELETE OHTER STUDENT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary button button2">VIEW OTHER STUDENT</a>&emsp;
+    <a href="/view" class="btn btn-lg btn-primary button button2">VIEW ALL STUDENT</a>&emsp;
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+	</body>
 
 </html>
