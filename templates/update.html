@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>Update</title>
+	</head>
+	<style>
+		h1{
+			font-family:"Arial Black", Gadget, sans-serif;
+		}
+		body{
+			background-color:white;
+		}
+	</style>
+<body>
+<!--    <p>Hello Admin : {{ email }}</p>-->
+	<hr>
+	<h3>Update tasks with a reference</h3>
+
+	<form action="/updation" method="post">
+	{% for task in search %}
+		Unique Enrollment Number ID : {{ task['enrollmentno'] }}<br/>
+	<input type="text" name="enrollmentno" value="{{ task['enrollmentno'] }}" hidden>
+
+	<table>
+	<tr>
+		<td>Student Personal Details</td>
+	</tr>
+	<tr>
+	<td>Student Name</td><td> : </td><td><input type="text" name="fullname" value="{{ task['StdName'] }}" placeholder="{{ task['StdName'] }}"></td>
+	</tr>
+     <tr>
+	<td>Batch Year</td><td> : </td><td><input type="text" name="batchyr" value="{{ task['batchyr'] }}" placeholder="{{ task['batchyr'] }}"></td>
+	</tr>
+     <tr>
+	<td>Aadhar Card</td><td> : </td><td><input type="text" name="aadharcard" value="{{ task['aadharcard'] }}" placeholder="{{ task['aadharcard'] }}"></td>
+	</tr>
+    <tr>
+	<td>Birth Date</td><td> : </td><td><input type="date" name="birthday" value="{{ task['birthday'] }}" placeholder="{{ task['birthday'] }}"></td>
+	</tr>
+    <tr>
+	<td>Gender</td><td> : </td><td><input type="text" name="gender" value="{{ task['gender'] }}" placeholder="{{ task['gender'] }}"></td>
+	</tr>
+    <tr>
+	<td>Student Number</td><td> : </td><td><input type="text" name="number" value="{{ task['number'] }}" placeholder="{{ task['number'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student Email Id</td><td> : </td><td><input type="text" name="email" value="{{ task['emailp'] }}" placeholder="{{ task['emailp'] }}"></td>
+	</tr>
+	<tr>
+	<td>Parents Number</td><td> : </td><td><input type="text" name="Parentnumber" value="{{ task['Parentnumber'] }}" placeholder="{{ task['Parentnumber'] }}"></td>
+	</tr>
+	<tr>
+	<td>Parent Email Id</td><td> : </td><td><input type="text" name="Parentemail" value="{{ task['Parentemail'] }}" placeholder="{{ task['Parentemail'] }}"></td>
+	</tr>
+    <tr>
+	<td>Home Address</td><td> : </td><td><textarea type="text" name="Homeadd" rows=3 cols=30 placeholder="{{ task['Homeadd'] }}"> {{ task['Homeadd'] }} </textarea></td>
+	</tr>
+		<tr>
+		<td>Student Accademic Details</td>
+	</tr>
+	<tr>
+	<td>Student Course Code</td><td> : </td><td><input type="text" name="Coursecode" value="{{ task['Coursecode'] }}" placeholder="{{ task['Coursecode'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student Course Type</td><td> : </td><td><input type="text" name="Coursetype" value="{{ task['Coursetype'] }}" placeholder="{{ task['Coursetype'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student Branch Code</td><td> : </td><td><input type="text" name="Branchcode" value="{{ task['Branchcode'] }}" placeholder="{{ task['Branchcode'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student Branch Name</td><td> : </td><td><input type="text" name="Branchname" value="{{ task['Branchname'] }}" placeholder="{{ task['Branchname'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student College Code</td><td> : </td><td><input type="text" name="Collegecode" value="{{ task['Collegecode'] }}" placeholder="{{ task['Collegecode'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student College Name</td><td> : </td><td><input type="text" name="Collegename" value="{{ task['Collegename'] }}" placeholder="{{ task['Collegename'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student Current Status</td><td> : </td><td><input type="text" name="Currentstatus" value="{{ task['Currentstatus'] }}" placeholder="{{ task['Currentstatus'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student CPI</td><td> : </td><td><input type="text" name="CPI" value="{{ task['CPI'] }}" placeholder="{{ task['CPI'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student CGPA</td><td> : </td><td><input type="text" name="CGPA" value="{{ task['CGPA'] }}" placeholder="{{ task['CGPA'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student Current Semester</td><td> : </td><td><input type="text" name="Currentsem" value="{{ task['Currentsem'] }}" placeholder="{{ task['Currentsem'] }}"></td>
+	</tr>
+	<tr>
+	<td>Student Term End</td><td> : </td><td><input type="text" name="Termend" value="{{ task['Termend'] }}" placeholder="{{ task['Termend'] }}"></td>
+	</tr>
+
+	</table>
+	{% endfor %}
+		<p>Student Name {{ StdName }} Data Updated Successfully</p>
+		<button type="submit"> Update Task </button>
+		<br/>
+	</form>
+	<h3>Select The Operation That Need To Be Performed Using Following Buttons</h3>
+    <a href="/Insert" class="btn btn-lg btn-primary btn-block">INSERT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary btn-block">UPDATE OTHER STUDENT</a>&emsp;
+    <a href="/delete" class="btn btn-lg btn-primary btn-block">DELETE OHTER STUDENT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary btn-block">VIEW OTHER STUDENT</a>&emsp;</body>
+    <a href="/view" class="btn btn-lg btn-primary btn-block">VIEW ALL STUDENT</a>&emsp;</body>
+</body>
+</html>

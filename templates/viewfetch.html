@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>View Search Results</title>
+		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >
+	</head>
+<body>
+    <p>Hello Admin : {{ email }}</p>
+
+	<h1>Search Results</h1>
+	<hr>
+	{% if search[0] %}
+	<h3>Result of the Search</h3>
+	<table>
+	    <tr id="row">
+	    	<td class="enrollmentno">Enrollment Number</td>
+	    	<td class="StdName">Student Name</td>
+	    	<td class="batchyr">Batch Year</td>
+	    	<td class="aadharcard">Aadhar Card</td>
+	    	<td class="birthday">Birth Date</td>
+            <td class="gender">Gender</td>
+	    	<td class="number">Student Personal Number</td>
+	    	<td class="emailp">Student Personal E-mail</td>
+	    	<td class="Parentnumber">Parent Personal Number</td>
+	    	<td class="Parentemail">Parent Personal E-mail</td>
+            <td class="Homeadd">Home Address</td>
+	    	<td class="Coursecode">Course Code</td>
+	    	<td class="Coursetype">Course type</td>
+	    	<td class="Branchcode">Branch Code</td>
+	    	<td class="Branchname">Branch Name</td>
+            <td class="Collegecode">College Code</td>
+	    	<td class="Collegename">College Name</td>
+	    	<td class="Currentstatus">Student Current Status</td>
+	    	<td class="CPI">CPI</td>
+	    	<td class="CGPA">CGPA</td>
+            <td class="Currentsem">Current Semester</td>
+            <td class="Termend">Term End</td>
+		    <td class="func">Delete</td>
+		    <td class="func">Modify</td>
+	    </tr>
+		{% for task in search %}
+		<tr class="datas">
+			<td class="enrollmentno">{{ task["enrollmentno"] }}</td>
+			<td class="StdName">{{ task["StdName"] }}</td>
+			<td class="batchyr">{{ task["batchyr"] }}</td>
+			<td class="aadharcard">{{ task["aadharcard"] }}</td>
+            <td class="birthday">{{ task["birthday"] }}</td>
+			<td class="gender">{{ task["gender"] }}</td>
+			<td class="number">{{ task["number"] }}</td>
+			<td class="emailp">{{ task["emailp"] }}</td>
+            <td class="Parentnumber">{{ task["Parentnumber"] }}</td>
+			<td class="Parentemail">{{ task["Parentemail"] }}</td>
+			<td class="Homeadd">{{ task["Homeadd"] }}</td>
+			<td class="Coursecode">{{ task["Coursecode"] }}</td>
+            <td class="Coursetype">{{ task["Coursetype"] }}</td>
+			<td class="Branchcode">{{ task["Branchcode"] }}</td>
+			<td class="Branchname">{{ task["Branchname"] }}</td>
+			<td class="Collegecode">{{ task["Collegecode"] }}</td>
+            <td class="Collegename">{{ task["Collegename"] }}</td>
+			<td class="Currentstatus">{{ task["Currentstatus"] }}</td>
+			<td class="CPI">{{ task["CPI"] }}</td>
+			<td class="CGPA">{{ task["CGPA"] }}</td>
+            <td class="Currentsem">{{ task["Currentsem"] }}</td>
+			<td class="Termend">{{ task["Termend"] }}</td>
+			<td class="func1"><a href="./remove?enrollmentno={{ task['enrollmentno'] }}"><button type="submit">DELETE THIS STUDENT</button></a></td>
+			<td class="func1"><a href="./update?enrollmentno={{ task['enrollmentno'] }}"><button type="submit">UPDATE THIS STUDENT</button></a></td>
+		</tr>
+		{% endfor %}
+	{% else %}
+		<h4>No Result Found !!</h4>
+	{% endif %}
+	</table>
+<h3>Select The Operation That Need To Be Performed Using Following Buttons</h3>
+    <a href="/Insert" class="btn btn-lg btn-primary btn-block">INSERT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary btn-block">UPDATE OTHER STUDENT</a>&emsp;
+    <a href="/delete" class="btn btn-lg btn-primary btn-block">DELETE OHTER STUDENT</a>&emsp;
+    <a href="/fetch" class="btn btn-lg btn-primary btn-block">VIEW OTHER STUDENT</a>&emsp;</body>
+    <a href="/view" class="btn btn-lg btn-primary btn-block">VIEW ALL STUDENT</a>&emsp;</body>
+
+</html>

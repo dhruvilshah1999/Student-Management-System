@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8">
+
+
+  <title>Insert</title>
+
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<!--  <link href="/static/css/form-upload.css" rel="stylesheet">-->
+
+</head>
+<body>
+    <p>Hello Admin : {{ email }}</p>
+   <form class="form-upload" method=post enctype=multipart/form-data action="/insert">
+
+       <h3>Enter Student Personal Details</h3>
+       <div class="form-group">
+        <label for="inputEnrollmentNo">Enrollment No:</label>
+        <input name="enrollmentno" class="form-control" id="inputEnrollmentNo" aria-describedby="emailHelp" placeholder="Enter Enrollment Number">
+        <small id="enrollmentNo" class="form-text text-muted">Please enter student Enrollment Number</small>
+       </div>
+
+    <div class="form-group">
+        <label for="Fullname">Full name</label>
+        <input name="fullname" class="form-control" id="inputFullName" aria-describedby="emailHelp" placeholder="Enter full name">
+        <small id="fullName" class="form-text text-muted">Please enter student full name(First name and Last name)</small>
+    </div>
+
+   <div class="form-group">
+       <label for="Batchyr">Batch Year</label>
+        <input typename="batchyr" class="form-control" id="inputBatchYr" placeholder="Enter the batch year">
+        <small id="batchYr" class="form-text text-muted">Please enter last two digit of the year when student took admission in GTU</small>
+   </div>
+
+        <div class="form-group">
+            <label for="Aadharcard">AAdhar Card</label>
+            <input name="aadharcard" class="form-control" id="inputAadharCard" placeholder="Enter Student aadhar details">
+            <small id="aadharCard" class="form-text text-muted">Please enter Student aadhar card number</small>
+        </div>
+
+        <div class="form-group">
+            <label for="Birthday">Birthday:</label>
+            <input type="date" name="birthday" class="form-control" id="Birthday" placeholder="Enter Student Birthdate">
+            <small id="birth" class="form-text text-muted">Please enter Student birthdate in YY-MM-DD Format</small>
+        </div>
+
+        <div class="form-group">
+            <label for="Gender">Gender:</label>
+            <input name="gender" class="form-control" id="Gender" placeholder="Enter the Gender">
+            <small id="gen" class="form-text text-muted">Use M-Male | F-Female | O-Others</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputNumber">Personal Number:</label>
+            <input name="number" class="form-control" id="inputNumber" placeholder="Enter the Number">
+            <small id="num" class="form-text text-muted">Please enter Student Personal Number</small>
+        </div>
+
+        <div class="form-group">
+            <label for="InputEmail">Student Email Address:</label>
+            <input name="email" class="form-control" id="InputEmail"  placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Enter Student email</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputParentNumber">Parent Personal Number:</label>
+            <input name="Parentnumber" class="form-control" id="inputParentNumber" placeholder="Enter the Number">
+            <small id="ParentNum" class="form-text text-muted">Please enter Student's Parent Personal Number</small>
+        </div>
+
+         <div class="form-group">
+            <label for="inputParentEmail">Parent Email Address:</label>
+            <input name="Parentemail" class="form-control" id="inputParentEmail"  placeholder="Enter email">
+            <small id="ParentEmail" class="form-text text-muted">Enter Parent email</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputHomeAddress">Student Home Address:</label>
+            <input name="Homeadd" class="form-control" id="inputHomeAddress"  placeholder="Enter home Address">
+            <small id="HomeAdd" class="form-text text-muted">Enter Student Home Address</small>
+        </div>
+
+        <h3>Enter the Student Accademic Details</h3>
+        <div class="form-group">
+            <label for="inputCourseCode">Course Code:</label>
+            <input name="Coursecode" class="form-control" id="inputCourseCode"  placeholder="Enter Student Course Code">
+            <small id="CourseCode" class="form-text text-muted">Enter Student Course Code of (Eg: BE/BSC/BA/BPHARM/BBA) ETC</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCourseType">Course Type:</label>
+            <input name="Coursetype" class="form-control" id="inputCourseType"  placeholder="Enter Student Course Type">
+            <small id="CourseType" class="form-text text-muted">Enter Student Course Type (Eg: BE/BSC/BA/BPHARM/BBA) ETC.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputBranchCode">Branch Code:</label>
+            <input name="Branchcode" class="form-control" id="inputBranchCode"  placeholder="Enter Student Branch Code">
+            <small id="BranchCode" class="form-text text-muted">Enter Student Branch Code.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputBranchName">Branch Name:</label>
+            <input name="Branchname" class="form-control" id="inputBranchName"  placeholder="Enter Student Branch Name">
+            <small id="BranchName" class="form-text text-muted">Enter Student Branch Name.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCollegeCode">College Code:</label>
+            <input name="Collegecode" class="form-control" id="inputCollegeCode"  placeholder="Enter Student College Code">
+            <small id="CollegeCode" class="form-text text-muted">Enter Student College Code.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCollegeName">College Name:</label>
+            <input name="Collegename" class="form-control" id="inputCollegeName"  placeholder="Enter Student College Name">
+            <small id="CollegeName" class="form-text text-muted">Enter Student College Name.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCurrentStatus">Student Current Status:</label>
+            <input name="Currentstatus" class="form-control" id="inputCurrentStatus"  placeholder="Enter Student Current Status">
+            <small id="CurrentStatus" class="form-text text-muted">Enter Status as Studying / Graduated.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCPI">CPI: (Cumulative Performance Index):</label>
+            <input name="CPI" class="form-control" id="inputCPI"  placeholder="Enter Student CPI">
+            <small id="cpi" class="form-text text-muted">Enter the Average of Studied Semester by Student</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCGPA">CGPA: (Cumulative Grade Point Average):</label>
+            <input name="CGPA" class="form-control" id="inputCGPA"  placeholder="Enter Student CGPA">
+            <small id="cgpa" class="form-text text-muted">If Student have completed all 4 semester than only CGPA should be entered otherwise CGPA will be considered as "0"</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCurrentSem">Student Current Semester:</label>
+            <input name="Currentsem" class="form-control" id="inputCurrentSem"  placeholder="Enter Student Current Semester">
+            <small id="CurrentSem" class="form-text text-muted">Enter Current Semester Number.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputTermEnd">Student Term End:</label>
+            <input name="Termend" class="form-control" id="inputTermEnd"  placeholder="Enter Student Term End">
+            <small id="TermEnd" class="form-text text-muted">Enter Student Term End Year.</small>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Insert</button><br>
+        <p>Student Name {{ StdName }} Data Added Successfully</p>
+</form>
+   <a href="/logged_in" class="btn btn-lg btn-primary btn-block">BACK</a>&emsp;
+<h3>Select The Operation That Need To Be Performed Using Following Buttons</h3>
+    <a href="/fetch" class="btn btn-lg btn-primary btn-block">UPDATE</a>&emsp;
+    <a href="/delete" class="btn btn-lg btn-primary btn-block">DELETE</a>&emsp;
+    <a href="/view" class="btn btn-lg btn-primary btn-block">VIEW</a>&emsp;
+</body>
+</html>

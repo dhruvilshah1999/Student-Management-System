@@ -1,0 +1,141 @@
+h1{
+/*	font-family:"Arial Black", Gadget, sans-serif;*/
+	font-family:"Times New Romans", Gadget, sans-serif;
+}
+body{
+	color:black;
+	background-color:white;
+	left-margin:10px;
+	right-margin:10px;
+}
+table{
+	border-collapse:collapse;
+}
+td
+{
+	border: rgba(224, 119, 70, 1) 2px solid;
+	word-wrap:break-word;
+}
+table#close{
+
+	table-layout:default;
+	border-collapse:seperate;
+	border-spacing: 5px 5px;
+	border:none;
+	vertical-align:top;
+}
+table.none
+{
+	border:none;
+	vertical-align:top;
+}
+table.none td
+{
+	border: none;
+}
+tr.row td{
+	text-decoration:italic;
+}
+th.enrollmentno{
+	width:15%;
+}
+th.StdName{
+	width:15%;
+}
+th.batchyr{
+	width:15%;
+}
+th.aadharcard{
+	width:15%;
+}
+th.birthday{
+	width:15%;
+}
+th.gender{
+	width:15%;
+}
+th.status{
+	width:15%;
+}
+th.number{
+	width:15%;
+}
+th.emailp{
+	width:15%;
+}
+th.Parentnumber{
+	width:15%;
+}
+th.Parentemail{
+	width:15%;
+}
+th.Homeadd{
+	width:15%;
+}
+th.Coursecode{
+	width:15%;
+}
+th.Coursetype{
+	width:15%;
+}
+th.Branchcode{
+	width:15%;
+}
+th.Branchname{
+	width:15%;
+}
+th.Collegecode{
+	width:15%;
+}
+th.Collegename{
+	width:15%;
+}
+th.Currentstatus{
+	width:15%;
+}
+th.CPI{
+	width:15%;
+}
+th.CGPA{
+	width:15%;
+}
+th.Currentsem{
+	width:15%;
+}
+th.Termend{
+	width:15%;
+}
+th.func1{
+	width:15%;
+}
+th.func2{
+	width:15%;
+}
+input[type=submit] {
+    width: 20em;  height: 2em;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+a.active {
+    background-color: #4CAF50;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+

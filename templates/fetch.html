@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Fetch Details</title>
+
+	</head>
+	<style>
+		h1{
+			font-family:"Arial Black", Gadget, sans-serif;
+		}
+		body{
+			background-color:white;
+		}
+	</style>
+<body>
+    <p>Hello Admin : {{ email }}</p>
+
+	<form action="/fetcher"	method="GET" >
+		<table class="none" id="close">
+		<tr>
+		<td></td><td></td>
+		<td><big><b>Search Reference:</b></big></td>
+		<td><select name="refer" required>
+			<option value="enrollmentno">Enrollment Number</option>
+			<option value="StdName">Student Name</option>
+		</select></td>
+		<td><input type="text" name="key" placeholder="Search Student" size="100" /></td>
+		<td><button type="submit">Search</button></td>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>
